@@ -1,9 +1,4 @@
-type Props = {
-  params: {
-    slug: string;
-  };
-};
-const ProductsPage = ({ params }: Props) => {
+const ProductsPage = () => {
   return <div>Products Page!</div>;
 };
 
