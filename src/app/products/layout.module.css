@@ -1,0 +1,13 @@
+.nav {
+  display: flex;
+  padding: 1rem;
+  border: 1px solid red;
+  margin-bottom: 1rem;
+}
+.nav a {
+  padding: 0 8px;
+}
+
+.section {
+  padding: 1rem;
+}
