@@ -9,7 +9,7 @@ const PantsPage = ({ params }: Props) => {
   if (params.slug === "noting") {
     notFound();
   }
-  return <div>{params.slug}</div>;
+  return <div>{params.slug} 제품 페이지</div>;
 };
 
 export function generateStateParams() {
