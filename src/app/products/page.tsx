@@ -1,6 +1,8 @@
 import { getProducts } from "@/service/products";
 import Link from "next/link";
 
+export const revalidate = 3;
+
 const ProductsPage = async () => {
   const products = await getProducts();
 
