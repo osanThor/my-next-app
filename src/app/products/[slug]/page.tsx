@@ -17,7 +17,7 @@ const PantsPage = ({ params }: Props) => {
   return <div>{params.slug} 제품 페이지</div>;
 };
 
-export function generateStateParams() {
+export function generateStaticParams() {
   const products = ["pants", "skirt"];
   return products.map((product) => ({
     slug: product,
