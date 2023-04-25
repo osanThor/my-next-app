@@ -1,16 +1,9 @@
+import MeowArticle from "@/components/MeowArticle";
 import { getProducts } from "@/service/products";
 import Link from "next/link";
-import styles from "./page.module.css";
 
 const ProductsPage = async () => {
   const products = await getProducts();
-  const res = await fetch("https://meowfacts.herokuapp.com", {
-    // next: { revalidate: 0 },
-    // cache: "no-store",
-  });
-  const data = await res.json();
-  const factText = data.data[0];
-
   return (
     <div>
       Products Page!
@@ -21,7 +14,7 @@ const ProductsPage = async () => {
           </li>
         ))}
       </ul>
-      <article className={styles.article}>{factText}</article>
+      <MeowArticle />
     </div>
   );
 };
