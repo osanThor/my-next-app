@@ -1,13 +1,9 @@
+import { getProducts } from "@/service/products";
 import Link from "next/link";
 
-const products = [
-  { name: "셔츠", link: "shirts" },
-  { name: "팬티", link: "pants" },
-  { name: "스커트", link: "skirt" },
-  { name: "신발", link: "shoes" },
-];
-
 const ProductsPage = () => {
+  // server file (database) 에 있는 리스트
+  const products = getProducts();
   return (
     <div>
       Products Page!
