@@ -11,21 +11,21 @@ export function generateMetadata({ params }: Props) {
     title: `제품의 이름 ${params.slug}`,
   };
 }
-const PantsPage = ({ params: { slug } }: Props) => {
-  const product = getProduct(slug);
+const ProductPage = async ({ params: { slug } }: Props) => {
+  const product = await getProduct(slug);
 
   if (!product) {
     notFound();
   }
-  return <div>{product.link} 제품 페이지</div>;
+  return <div>{product.name} 제품 페이지</div>;
 };
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
   // 모든 제품의 페이지들을 미리 만들어 둘 수 잇게 해줄거임(ssg)
-  const products = getProducts();
+  const products = await getProducts();
   return products.map((product) => ({
-    slug: product.link,
+    slug: product.id,
   }));
 }
 
-export default PantsPage;
+export default ProductPage;
