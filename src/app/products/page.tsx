@@ -3,6 +3,7 @@ import { getProducts } from "@/service/products";
 import Link from "next/link";
 
 const ProductsPage = async () => {
+  throw new Error();
   const products = await getProducts();
   return (
     <div>
