@@ -1,4 +1,5 @@
 import { getProduct, getProducts } from "@/service/products";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 
 type Props = {
@@ -20,7 +21,17 @@ const ProductPage = async ({ params: { slug } }: Props) => {
   if (!product) {
     notFound();
   }
-  return <div>{product.name} 제품 페이지</div>;
+  return (
+    <>
+      <div>{product.name} 제품 페이지</div>
+      <Image
+        src={`/images/${product.image}`}
+        alt="product"
+        width={300}
+        height={300}
+      />
+    </>
+  );
 };
 
 export async function generateStaticParams() {
